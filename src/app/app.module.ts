@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
@@ -16,7 +17,12 @@ import { PhotoComponent } from './photo/photo.component';
     PhotoComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      { path: '', component: SliderComponent },
+      { path: 'photos', component: PhotosComponent },
+      { path: 'photos/:photosId', component: PhotosComponent },
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
