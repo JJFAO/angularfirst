@@ -8,6 +8,12 @@ import { SliderComponent } from './slider/slider.component';
 import { PhotosComponent } from './photos/photos.component';
 import { PhotoComponent } from './photo/photo.component';
 
+const Routes = [
+  { path: '', component: SliderComponent },
+  { path: 'photos', component: PhotosComponent },
+  { path: 'photo/:id', component: PhotosComponent },
+];
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +24,7 @@ import { PhotoComponent } from './photo/photo.component';
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot([
-      { path: '', component: SliderComponent },
-      { path: 'photos', component: PhotosComponent },
-      { path: 'photos/:photosId', component: PhotosComponent },
-    ])
+    RouterModule.forRoot(Routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
